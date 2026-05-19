@@ -864,12 +864,3 @@ else:
         3. 선택 또는 업로드 완료 후 자동으로 대시보드가 열립니다.
         """)
 
-st.markdown("---")
-with st.expander("💻 app_md.py 전체 코드 보기", expanded=False):
-    source_path = os.path.abspath(__file__)
-    st.caption(source_path)
-    try:
-        with open(source_path, "r", encoding="utf-8") as source_file:
-            st.code(source_file.read(), language="python")
-    except Exception as e:
-        st.error(f"소스 코드를 불러오지 못했습니다: {e}")
