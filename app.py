@@ -42,7 +42,7 @@ div[data-testid="metric-container"], div[data-testid="metric-container"] > div {
 
 # ─── API Key ───────────────────────────────────────────────────────────────────
 try:
-    OPENAI_API_KEY = st.secrets["JYL"]
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 except (FileNotFoundError, KeyError):
     OPENAI_API_KEY = None
 
@@ -308,11 +308,6 @@ def load_from_upload(uploaded_file):
 with st.sidebar:
     st.title("👑 임원 리더십 코칭")
 
-    if not OPENAI_API_KEY:
-        user_key = st.text_input("🔑 OpenAI API Key 입력", type="password", placeholder="sk-...")
-        if user_key:
-            OPENAI_API_KEY = user_key
-            st.success("API Key 적용 완료!")
 
     st.divider()
 
